@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"dinhphu28.com/dictionary"
+	"github.com/dinhphu28/dictionary"
 )
 
 type LookupHandlerV2 struct{}

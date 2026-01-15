@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"dinhphu28.com/dictionary/database"
+	"github.com/dinhphu28/dictionary/database"
 )
 
 func checkResources() {

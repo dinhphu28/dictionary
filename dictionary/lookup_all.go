@@ -4,8 +4,8 @@ import (
 	"log"
 	"sort"
 
-	"dinhphu28.com/dictionary/database"
-	"dinhphu28.com/dictionary/internal/config"
+	"github.com/dinhphu28/dictionary/database"
+	"github.com/dinhphu28/dictionary/internal/config"
 )
 
 type resultWrap struct {

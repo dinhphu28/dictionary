@@ -1,6 +1,6 @@
 package native
 
-import "dinhphu28.com/dictionary/dictionary"
+import "github.com/dinhphu28/dictionary/dictionary"
 
 type MessageRequestType int
 

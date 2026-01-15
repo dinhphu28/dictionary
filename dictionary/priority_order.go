@@ -3,8 +3,8 @@ package dictionary
 import (
 	"sort"
 
-	"dinhphu28.com/dictionary/database"
-	"dinhphu28.com/dictionary/internal/config"
+	"github.com/dinhphu28/dictionary/database"
+	"github.com/dinhphu28/dictionary/internal/config"
 )
 
 func ApplyPriorityOrder(globalConfig config.GlobalConfig, dictionaries []database.Dictionary) {

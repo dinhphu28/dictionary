@@ -1,6 +1,6 @@
 package dictionary
 
-import "dinhphu28.com/dictionary/database"
+import "github.com/dinhphu28/dictionary/database"
 
 type LookupResult struct {
 	ID         string           `json:"id"`

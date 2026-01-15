@@ -4,10 +4,10 @@ import (
 	"log"
 	"path/filepath"
 
-	"dinhphu28.com/dictionary/database"
-	"dinhphu28.com/dictionary/dictionary"
-	"dinhphu28.com/dictionary/internal/config"
-	"dinhphu28.com/dictionary/internal/setup"
+	"github.com/dinhphu28/dictionary/database"
+	"github.com/dinhphu28/dictionary/dictionary"
+	"github.com/dinhphu28/dictionary/internal/config"
+	"github.com/dinhphu28/dictionary/internal/setup"
 )
 
 var (

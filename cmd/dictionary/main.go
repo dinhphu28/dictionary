@@ -10,10 +10,10 @@ import (
 
 	_ "modernc.org/sqlite"
 
-	"dinhphu28.com/dictionary"
-	"dinhphu28.com/dictionary/doctor"
-	"dinhphu28.com/dictionary/internal/api"
-	"dinhphu28.com/dictionary/internal/native"
+	"github.com/dinhphu28/dictionary"
+	"github.com/dinhphu28/dictionary/doctor"
+	"github.com/dinhphu28/dictionary/internal/api"
+	"github.com/dinhphu28/dictionary/internal/native"
 )
 
 func main() {

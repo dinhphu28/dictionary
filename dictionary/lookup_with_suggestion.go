@@ -1,8 +1,8 @@
 package dictionary
 
 import (
-	"dinhphu28.com/dictionary/database"
-	"dinhphu28.com/dictionary/pkg/ranking"
+	"github.com/dinhphu28/dictionary/database"
+	"github.com/dinhphu28/dictionary/pkg/ranking"
 )
 
 type ApproximateLookup struct {
