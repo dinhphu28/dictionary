@@ -1,15 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
 	_ "modernc.org/sqlite"
 
-	"github.com/dinhphu28/dictionary"
+	"github.com/dinhphu28/dictionary/api"
 	"github.com/dinhphu28/dictionary/doctor"
-	"github.com/dinhphu28/dictionary/internal/api"
 	"github.com/dinhphu28/dictionary/native"
 )
 
@@ -27,20 +25,11 @@ func main() {
 			return
 
 		case "http":
-			runHTTP()
+			api.RunHTTP()
 			return
 		}
 	}
 
 	// Default behavior
 	native.RunNative()
-}
-
-func runHTTP() {
-	fmt.Println("HTTP mode")
-
-	dictionary.StartEngine()
-	lookupHandlerV2 := api.NewLookupHandlerV2()
-	router := api.NewRouter(*lookupHandlerV2)
-	router.StartAPIServer()
 }
