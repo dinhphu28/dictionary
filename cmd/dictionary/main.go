@@ -37,13 +37,9 @@ func main() {
 }
 
 func runHTTP() {
-	// your existing HTTP server logic
 	fmt.Println("HTTP mode")
 
 	dictionary.StartEngine()
-	// approximateLookup := dictionary.GetApproximateLookup()
-	//
-	// lookupHandlerV2 := api.NewLookupHandlerV2(approximateLookup)
 	lookupHandlerV2 := api.NewLookupHandlerV2()
 	router := api.NewRouter(*lookupHandlerV2)
 	router.StartAPIServer()
