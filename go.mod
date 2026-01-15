@@ -1,4 +1,4 @@
-module dinhphu28.com/dictionary
+module github.com/dinhphu28/dictionary
 
 go 1.25.5
 

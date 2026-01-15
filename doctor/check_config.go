@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"dinhphu28.com/dictionary/internal/config"
+	"github.com/dinhphu28/dictionary/internal/config"
 )
 
 func checkConfig() {

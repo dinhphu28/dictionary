@@ -3,7 +3,7 @@ package doctor
 import (
 	"fmt"
 
-	"dinhphu28.com/dictionary"
+	"github.com/dinhphu28/dictionary"
 )
 
 func checkLookup() {
