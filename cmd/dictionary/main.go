@@ -10,9 +10,9 @@ import (
 
 	_ "modernc.org/sqlite"
 
+	"dinhphu28.com/dictionary"
+	"dinhphu28.com/dictionary/doctor"
 	"dinhphu28.com/dictionary/internal/api"
-	"dinhphu28.com/dictionary/internal/doctor"
-	"dinhphu28.com/dictionary/internal/engine"
 	"dinhphu28.com/dictionary/internal/native"
 )
 
@@ -44,11 +44,11 @@ func runNative() {
 	log.SetOutput(os.Stderr)
 	log.Println("Native host started")
 
-	engine.StartEngine()
-	approximateLookup := engine.GetApproximateLookup()
+	dictionary.StartEngine()
+	approximateLookup := dictionary.GetApproximateLookup()
 
-	ready := engine.Ready()
-	loadedDictionaries := engine.LoadedDictionaries()
+	ready := dictionary.Ready()
+	loadedDictionaries := dictionary.LoadedDictionaries()
 
 	for {
 		raw, err := native.ReadMessage()
@@ -112,8 +112,8 @@ func runHTTP() {
 	// your existing HTTP server logic
 	fmt.Println("HTTP mode")
 
-	engine.StartEngine()
-	approximateLookup := engine.GetApproximateLookup()
+	dictionary.StartEngine()
+	approximateLookup := dictionary.GetApproximateLookup()
 
 	lookupHandlerV2 := api.NewLookupHandlerV2(approximateLookup)
 	router := api.NewRouter(*lookupHandlerV2)

@@ -3,12 +3,12 @@ package doctor
 import (
 	"fmt"
 
-	"dinhphu28.com/dictionary/internal/engine"
+	"dinhphu28.com/dictionary"
 )
 
 func checkLookup() {
-	engine.StartEngine()
-	approximateLookup := engine.GetApproximateLookup()
+	dictionary.StartEngine()
+	approximateLookup := dictionary.GetApproximateLookup()
 
 	result, err := approximateLookup.LookupWithSuggestion("hello")
 	if err != nil {
