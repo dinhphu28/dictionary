@@ -1,0 +1,18 @@
+# Dictionary configuration file
+# Used by CLI, HTTP, Native messaging, and Desktop app
+#
+version = 1
+
+# Dictionary lookup priority (higher = earlier)
+priority = [
+  "oxford_american",
+  "vietname_english",
+  "oxford_british_dictionary",
+  "oxford_american_writer_thesaurus",
+  "oxford_british_thesaurus"
+]
+
+[paths]
+# Directory containing dictionary resources
+# Can be absolute or relative
+resources = "../resources/"

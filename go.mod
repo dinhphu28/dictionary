@@ -2,7 +2,10 @@ module github.com/dinhphu28/dictionary
 
 go 1.25.5
 
-require modernc.org/sqlite v1.42.1
+require (
+	github.com/BurntSushi/toml v1.6.0
+	modernc.org/sqlite v1.42.1
+)
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect

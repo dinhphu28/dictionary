@@ -13,8 +13,9 @@ func IsPortable() bool {
 
 func hasConfig() bool {
 	configPath := startup.ResolvePath("config.json")
-  log.Printf("CONFIG PATH: %v", configPath)
-	return fileExists(configPath)
+	configPathToml := startup.ResolvePath("config.toml")
+	log.Printf("CONFIG PATH: %v | %v", configPath, configPathToml)
+	return fileExists(configPath) || fileExists(configPathToml)
 }
 
 func fileExists(path string) bool {

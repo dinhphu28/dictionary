@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	globalConfig      config.GlobalConfig
+	cfg               config.Config
 	dictionaries      []database.Dictionary
 	approximateLookup *ApproximateLookup
 )
@@ -19,7 +19,7 @@ var (
 func StartEngine() {
 	loadConfigAndData()
 
-	dictionaryLookup := NewDictionaryLookup(dictionaries, globalConfig)
+	dictionaryLookup := NewDictionaryLookup(dictionaries, cfg.Priority)
 	approximateLookup = NewApproximateLookup(*dictionaryLookup)
 }
 
@@ -45,14 +45,16 @@ func Lookup(q string) (LookupResultWithSuggestion, error) {
 
 func loadConfigAndData() {
 	paths := setup.DefaultPaths()
-	configPath := filepath.Join(paths.ConfigDir, "config.json")
+	configPathToml := filepath.Join(paths.ConfigDir, "config.toml")
 
-	if err := config.LoadConfig(configPath); err != nil {
+	if err := config.LoadConfig(configPathToml); err != nil {
 		log.Fatal("failed to load config:", err)
 	}
-	globalConfig = config.GetGlobalConfig()
+	cfg := config.GetConfig()
+	log.Printf("CONFIG TOML: %v", cfg)
 
-	resourcesPath := globalConfig.DataDir
+	resourcesPath := cfg.Paths.Resources
+	log.Printf("resourcesPath: %v", resourcesPath)
 	if !filepath.IsAbs(resourcesPath) {
 		resourcesPath = startup.ResolvePath(resourcesPath)
 	}
