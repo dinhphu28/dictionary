@@ -5,7 +5,6 @@ import (
 	"sort"
 
 	"github.com/dinhphu28/dictionary/database"
-	"github.com/dinhphu28/dictionary/internal/config"
 )
 
 type resultWrap struct {
@@ -16,16 +15,19 @@ type resultWrap struct {
 
 type DictionaryLookup struct {
 	dictionaries []database.Dictionary
-	globalConfig config.GlobalConfig
+	// globalConfig config.GlobalConfig
+	priority []string
 }
 
 func NewDictionaryLookup(
 	dictionaries []database.Dictionary,
-	globalConfig config.GlobalConfig,
+	// globalConfig config.GlobalConfig,
+	priority []string,
 ) *DictionaryLookup {
 	return &DictionaryLookup{
 		dictionaries: dictionaries,
-		globalConfig: globalConfig,
+		// globalConfig: globalConfig,
+		priority: priority,
 	}
 }
 
@@ -33,7 +35,7 @@ func (dictLookup *DictionaryLookup) LookupAllDictionariesAndSort(
 	q string,
 ) []LookupResult {
 	lookupResults := dictLookup.lookupAllDictionaries(q)
-	sortResultsByPriority(lookupResults, dictLookup.globalConfig.Priority)
+	sortResultsByPriority(lookupResults, dictLookup.priority)
 	return lookupResults
 }
 
