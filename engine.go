@@ -45,9 +45,9 @@ func Lookup(q string) (LookupResultWithSuggestion, error) {
 
 func loadConfigAndData() {
 	paths := setup.DefaultPaths()
-	configPathToml := filepath.Join(paths.ConfigDir, "config.toml")
+	configPath := filepath.Join(paths.ConfigDir, "config.toml")
 
-	if err := config.LoadConfig(configPathToml); err != nil {
+	if err := config.LoadConfig(configPath); err != nil {
 		log.Fatal("failed to load config:", err)
 	}
 	cfg := config.GetConfig()
