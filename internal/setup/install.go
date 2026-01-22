@@ -39,31 +39,16 @@ func installBinary(path string) error {
 }
 
 func installConfigs(paths Paths) error {
-	// 1. Install config.json (only if not exists)
-	cfgDst := filepath.Join(paths.ConfigDir, "config.json")
-	if _, err := os.Stat(cfgDst); os.IsNotExist(err) {
-		if err := copyFile("./config.json", cfgDst, 0o644); err != nil {
-			return err
-		}
-	}
+	// 1. Install config.toml (only if not exists)
+	// cfgDst := filepath.Join(paths.ConfigDir, config.ConfigFile)
+	// if _, err := os.Stat(cfgDst); os.IsNotExist(err) {
+	// 	if err := copyFile(startup.ResolvePath(config.ConfigFile), cfgDst, 0o644); err != nil {
+	// 		return err
+	// 	}
+	// }
 
-	// 2. Install runtime.json
-	runtimeCfg := filepath.Join(paths.ConfigDir, "runtime.json")
-	if err := os.MkdirAll(paths.ConfigDir, 0o755); err != nil {
-		return err
-	}
+	WriteConfigToml(paths.ConfigDir, DefaultConfig(), false)
 
-	if _, err := os.Stat(runtimeCfg); os.IsNotExist(err) {
-		content := fmt.Sprintf(`{
-  "mode": "native",
-  "resources_path": "%s"
-}
-`, filepath.Join(paths.DataDir, "resources"))
-
-		if err := os.WriteFile(runtimeCfg, []byte(content), 0o644); err != nil {
-			return err
-		}
-	}
 	return nil
 }
 
