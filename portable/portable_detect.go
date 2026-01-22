@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/dinhphu28/dictionary/internal/config"
 	"github.com/dinhphu28/dictionary/internal/startup"
 )
 
@@ -12,10 +13,9 @@ func IsPortable() bool {
 }
 
 func hasConfig() bool {
-	configPath := startup.ResolvePath("config.json")
-	configPathToml := startup.ResolvePath("config.toml")
-	log.Printf("CONFIG PATH: %v | %v", configPath, configPathToml)
-	return fileExists(configPath) || fileExists(configPathToml)
+	configPath := startup.ResolvePath(config.ConfigFile)
+	log.Printf("CHECK CONFIG PATH: %v", configPath)
+	return fileExists(configPath)
 }
 
 func fileExists(path string) bool {
