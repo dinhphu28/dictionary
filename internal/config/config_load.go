@@ -22,7 +22,7 @@ func loadTomlConfig(path string) error {
 		return err
 	}
 
-	if len(cfg.Priority) == 0 {
+	if len(cfg.Order) == 0 {
 		return errors.New("priority list is empty")
 	}
 	if cfg.Paths.Resources == "" {

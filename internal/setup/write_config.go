@@ -46,7 +46,7 @@ func WriteConfigToml(path string, cfg *config.Config, overwrite bool) error {
 func DefaultConfig() *config.Config {
 	cfg := &config.Config{
 		Version: 1,
-		Priority: []string{
+		Order: []string{
 			"oxford_american",
 			"vietname_english",
 			"oxford_british_dictionary",

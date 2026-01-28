@@ -26,5 +26,5 @@ func checkConfig() {
 	}
 
 	cfg := config.GetConfig()
-	fmt.Printf("✔ Config loaded (%d priorities)\n", len(cfg.Priority))
+	fmt.Printf("✔ Config loaded (%d priorities)\n", len(cfg.Order))
 }

@@ -4,7 +4,7 @@
 version = 1
 
 # Dictionary lookup priority (higher = earlier)
-priority = [
+order = [
   "oxford_american",
   "vietname_english",
   "oxford_british_dictionary",

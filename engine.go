@@ -19,7 +19,7 @@ var (
 func StartEngine() {
 	loadConfigAndData()
 
-	dictionaryLookup := NewDictionaryLookup(dictionaries, cfg.Priority)
+	dictionaryLookup := NewDictionaryLookup(dictionaries, cfg.Order)
 	approximateLookup = NewApproximateLookup(*dictionaryLookup)
 }
 
